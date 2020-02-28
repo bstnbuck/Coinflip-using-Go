@@ -10,7 +10,7 @@ A Coinflipping-Protocoll written in Go
 * **11** = New Coinflip every 10 seconds
 * **22** = Check randomness of the protocoll
   
-### Informations
+### Information
 * The Code is self-explanatory commented
 
 
