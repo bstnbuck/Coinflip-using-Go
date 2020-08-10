@@ -50,9 +50,9 @@ func checkRandomness() { //to check if its really random
 func headortails() int {
 	var randomUser1, randomUser2 string //make variables for two random strings
 
-	randomUser1 = GenerateRandomString(12) //generate first random string with 12 character
+	randomUser1 = generateRandomString(12) //generate first random string with 12 character
 	//fmt.Println("Input RandomUser1: ", randomUser1)
-	randomUser2 = GenerateRandomString(12) //generate second random string with 12 character
+	randomUser2 = generateRandomString(12) //generate second random string with 12 character
 	//fmt.Println("Input RandomUser2: ", randomUser2)
 
 	hashUser1 := sha512.Sum512([]byte(randomUser1)) //make sha512 hash of first random string
@@ -80,16 +80,16 @@ func headortails() int {
 
 // GenerateRandomString returns a URL-safe, base64 encoded
 // securely generated random string.
-func GenerateRandomString(s int) string {
-	b := GenerateRandomBytes(s)
-	return base64.URLEncoding.EncodeToString(b)		//encode random byte array to base64 encoding
+func generateRandomString(s int) string {
+	b := generateRandomBytes(s)
+	return base64.URLEncoding.EncodeToString(b) //encode random byte array to base64 encoding
 }
 
-func GenerateRandomBytes(n int) []byte {
-	b := make([]byte, n)		//new byte array of length n
-	_, err := rand.Read(b)		//fill array with random
-	if err != nil {				//if error print
+func generateRandomBytes(n int) []byte {
+	b := make([]byte, n)   //new byte array of length n
+	_, err := rand.Read(b) //fill array with random
+	if err != nil {        //if error print
 		println(err)
 	}
-	return b					//return array
+	return b //return array
 }
